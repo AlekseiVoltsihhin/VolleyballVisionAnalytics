@@ -2,8 +2,6 @@
 
 This module implements **Goal 1 (Approach 1)** of the **Volleyball Vision Analytics** project: automatically locating the end of rallies in beach volleyball broadcasts (*Beach Volleyball World*) by detecting the referee's point-awarding arm gestures.
 
-It is written so that any team member or reviewer—even without a computer vision background—can understand how raw broadcast video is converted into structured predictions, how edge cases are handled, and what risks limit the approach.
-
 ---
 
 ## 1. Pipeline Architecture (How It Works)
@@ -80,16 +78,10 @@ The pipeline produces two artifacts:
 ## 6. Folder Structure & Setup
 
 ```text
-object_detection/
+referee_detection/
 ├── README.md                  # Module documentation (this file)
-├── requirements.txt           # Python dependencies (ultralytics, opencv-python, scikit-learn, pandas)
-├── model_training/            # Scripts for ROI setup, YOLO-pose extraction, and ML training
-├── ready_models/
-│   └── weights/               # Local storage for .pt and classifier weights (ignored by Git)
+├── scripts/                   # Scripts for ROI setup, YOLO-pose extraction, and ML training
+    └── extract_referee_poses.py
+│weights/                      # Local storage for .pt and classifier weights (ignored by Git)
 └── tests/                     # Notebooks and visual verification tests
-```
-
-Install required packages:
-```bash
-pip install -r requirements.txt
 ```
